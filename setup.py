@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="simplelayout-Xiaohu-Zheng",
-    version="0.0.1",
+    version="0.0.2",
     author="Xiaohu Zheng",
     author_email="zhengboy320@163.com",
     description="A simple layout package",
@@ -13,7 +13,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     license="MIT",
     url="https://github.com/idrl-assignment/2-simplelayout-generator-Xiaohu-Zheng",
-    packages=["src/simplelayout"],
+    packages=setuptools.find_packages(where="src"),
+    package_dir={"": "src"},
+    include_package_data=True,
     platforms="any",
     install_requires=["pytest", "numpy", "matplotlib", "scipy"],
     entry_points={"console_scripts": ["simplelayout=simplelayout.__main__:main"]
